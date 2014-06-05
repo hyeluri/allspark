@@ -1,4 +1,4 @@
-AllSpark - 15 hour project
+AllSpark 
 
 The Allspark can answer questions, solve math problems, post tweets and much more, without the internet!
 ========
