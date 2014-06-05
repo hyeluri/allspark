@@ -1,5 +1,3 @@
-AllSpark 
-
 The Allspark can answer questions, solve math problems, post tweets and much more, without the internet!
 ========
 http://challengepost.com/software/allspark
