@@ -151,16 +151,13 @@ passport.use(new TwitterStrategy({
     db.get('users', profile.id)
     .then(function(saved){
       if(!saved){
-        console.log("not saved", saved);
         return db.put('users', profile.id, profile);
       } else {
-        console.log("saved", saved);
         profile.phoneNumber = saved.phoneNumber;
         return db.put('users', profile.id, profile);
       }
     })
     .then(function(){
-      console.log("successfully saved");
       done(null, profile);
     });
     // .catch(function(){
