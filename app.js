@@ -75,7 +75,7 @@ app.post('/voice', voice);
 //   request.  If authentication fails, the user will be redirected back to the
 //   login page.  Otherwise, the primary route function function will be called,
 //   which, in this example, will redirect the user to the home page.
-// app.get('/auth/evernote/callback', 
+// app.get('/auth/evernote/callback',
 //   passport.authenticate('evernote', { failureRedirect: '/login' }),
 //   function(req, res) {
 //     res.redirect('/');
@@ -151,16 +151,20 @@ passport.use(new TwitterStrategy({
     db.get('users', profile.id)
     .then(function(saved){
       if(!saved){
+        console.log("not saved", saved);
         return db.put('users', profile.id, profile);
       } else {
+        console.log("saved", saved);
         profile.phoneNumber = saved.phoneNumber;
         return db.put('users', profile.id, profile);
       }
     })
     .catch(function(){
+      console.log("error");
       return db.put('users', profile.id, profile);
     })
     .then(function(){
+      console.log("successfully saved");
       done(null, profile);
     })
     .catch(done);
