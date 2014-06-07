@@ -162,16 +162,16 @@ passport.use(new TwitterStrategy({
     .then(function(){
       console.log("successfully saved");
       done(null, profile);
-    })
-    .catch(function(){
-      console.log("error");
-      return db.put('users', profile.id, profile);
-    })
-    .then(function(){
-      console.log("successfully saved second");
-      done(null, profile);
-    })
-    .catch(done);
+    });
+    // .catch(function(){
+    //   console.log("error");
+    //   return db.put('users', profile.id, profile)
+    //   .then(function(){
+    //     console.log("successfully saved second");
+    //     done(null, profile);
+    //   })
+    //   .catch(done);
+    // })
   }
 ));
 
